@@ -1,0 +1,7 @@
+{
+  "name": "Teetime Course API",
+  "version": "0.1.0",
+  "description": "Course Microservice for Teetime App",
+  "title": "Teetime Course API",
+  "url" : "https://api.teetime.com/v1"
+}
