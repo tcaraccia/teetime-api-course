@@ -1,4 +1,3 @@
-const Schema = require('mongoose').Schema;
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const httpStatus = require('http-status');
