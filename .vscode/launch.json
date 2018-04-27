@@ -5,20 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run mocha",
             "type": "node",
             "request": "launch",
-            "name": "Mocha Tests",
-            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-            "args": [
-                "-u",
-                "tdd",
-                "--timeout",
-                "999999",
-                "--colors",
-                "${workspaceFolder}/server"
-            ],
-            "internalConsoleOptions": "openOnSessionStart"
-        },
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "args": ["server/**/*.js", "--no-timeouts"],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": { "NODE_ENV": "development"}
+          },
         {
             "type": "node",
             "request": "launch",

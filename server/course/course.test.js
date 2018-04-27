@@ -44,6 +44,7 @@ describe('## Course APIs', () => {
           expect(res.body.email).to.equal(course.email);
           expect(res.body.name).to.equal(course.name);
           expect(res.body.description).to.equal(course.description);
+          expect(JSON.stringify(res.body.location)).to.equal(JSON.stringify(course.location));
           expect(res.body.thumbnail).to.equal(course.thumbnail);
           expect(res.body.banner).to.equal(course.banner);
           course = res.body;
@@ -62,6 +63,7 @@ describe('## Course APIs', () => {
           expect(res.body.email).to.equal(course.email);
           expect(res.body.name).to.equal(course.name);
           expect(res.body.description).to.equal(course.description);
+          expect(JSON.stringify(res.body.location)).to.equal(JSON.stringify(course.location));
           expect(res.body.thumbnail).to.equal(course.thumbnail);
           expect(res.body.banner).to.equal(course.banner);
           done();
@@ -94,6 +96,8 @@ describe('## Course APIs', () => {
           expect(res.body.description).to.equal(course.description);
           expect(res.body.thumbnail).to.equal(course.thumbnail);
           expect(res.body.banner).to.equal(course.banner);
+          expect(JSON.stringify(res.body.location)).to.equal(JSON.stringify(course.location));
+
           done();
         })
         .catch(done);
