@@ -37,7 +37,7 @@ const CourseSchema = new mongoose.Schema({
     type: String,
     default: 'http://via.placeholder.com/350x150'
   }
-},{
+}, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
