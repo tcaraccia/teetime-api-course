@@ -9,7 +9,7 @@ const APIError = require('../helpers/APIError');
 const CourseSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
     unique: true,
     match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
@@ -29,10 +29,6 @@ const CourseSchema = new mongoose.Schema({
     state: String,
     zone: String
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
   thumbnail: {
     type: String,
     default: 'http://via.placeholder.com/140x100'
@@ -40,6 +36,11 @@ const CourseSchema = new mongoose.Schema({
   banner: {
     type: String,
     default: 'http://via.placeholder.com/350x150'
+  }
+},{
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   }
 });
 

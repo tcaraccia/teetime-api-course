@@ -87,7 +87,7 @@ router.route('/')
 
 router.route('/:courseId')
  /**
- * @api {get} /api/courses/:id Retrieve one course
+ * @api {get} /api/v1/courses/:id Retrieve one course
  * @apiName Get
  * @apiGroup course
  * @apiVersion 0.1.0

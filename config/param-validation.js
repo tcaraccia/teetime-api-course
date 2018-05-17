@@ -4,6 +4,9 @@ module.exports = {
   // POST /api/courses
   createCourse: {
     body: {
+      /**
+       * TODO: Create Validations
+       */
       email: Joi.string().regex(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/).required()
 
     }
