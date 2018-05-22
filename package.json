@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start:debug": "cross-env DEBUG=teetime-api-auth:* yarn start",
+    "start:debug": "cross-env DEBUG=teetime-api-course:* yarn start",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
     "precommit": "yarn lint && yarn test",
