@@ -41,7 +41,8 @@ describe('## Teetime APIs', () => {
         .then((res) => {
           expect(res.body.slots).to.equal(4);
           expect(new Date(res.body.date).getTime()).to.equal(teetime.date);
-          expect(JSON.stringify(res.body.times[0].players)).to.equal(JSON.stringify(teetime.times[0].players));
+          expect(JSON.stringify(res.body.times[0].players))
+          .to.equal(JSON.stringify(teetime.times[0].players));
           teetime = res.body;
           done();
         })
