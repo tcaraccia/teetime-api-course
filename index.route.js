@@ -1,5 +1,6 @@
 const express = require('express');
 const courseRoutes = require('./server/course/course.route');
+const teetimeRoutes = require('./server/teetime/teetime.route');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -10,8 +11,7 @@ router.get('/health-check', (req, res) =>
   res.send('OK')
 );
 
-// mount course routes at /courses
 router.use('/courses', courseRoutes);
-
+router.use('/teetimes', teetimeRoutes);
 
 module.exports = router;

@@ -2,7 +2,6 @@ const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const httpStatus = require('http-status');
 const APIError = require('../helpers/APIError');
-
 /**
  * Course Schema
  */
@@ -29,6 +28,10 @@ const CourseSchema = new mongoose.Schema({
     state: String,
     zone: String
   },
+  teetimes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Teetime'
+  }],
   thumbnail: {
     type: String,
     default: 'http://via.placeholder.com/140x100'
@@ -36,6 +39,10 @@ const CourseSchema = new mongoose.Schema({
   banner: {
     type: String,
     default: 'http://via.placeholder.com/350x150'
+  },
+  available: {
+    type: Boolean,
+    default: true
   }
 }, {
   timestamps: {

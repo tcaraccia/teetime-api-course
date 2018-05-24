@@ -1,7 +1,7 @@
 {
-  "name": "teetime-api-course",
+  "name": "teetime-api",
   "version": "0.1.0",
-  "description": "An api to manage teetime courses",
+  "description": "An api for teetimes",
   "author": "Tomas Caraccia <tomascaraccia@gmail.com>",
   "main": "index.js",
   "private": false,
@@ -22,16 +22,13 @@
     "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:tcaraccia/teetime-api-course.git"
-  },
   "keywords": [
     "API"
   ],
   "dependencies": {
     "bluebird": "3.5.1",
     "body-parser": "1.18.2",
+    "chai-datetime": "^1.5.0",
     "compression": "1.7.2",
     "cookie-parser": "1.4.3",
     "cors": "2.8.4",
@@ -52,7 +49,6 @@
   },
   "devDependencies": {
     "chai": "4.1.2",
-    "chai-json-schema": "false1.5.0",
     "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
     "cross-env": "5.1.4",
