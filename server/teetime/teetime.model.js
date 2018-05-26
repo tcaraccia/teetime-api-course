@@ -4,8 +4,8 @@ const httpStatus = require('http-status');
 
 const TeetimeSchema = new mongoose.Schema({
   course: {
-    type: String,
-    ref: mongoose.Schema.Types.ObjectId
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course'
   },
   date: {
     type: Date,
@@ -37,6 +37,11 @@ TeetimeSchema.statics = {
         const err = new APIError('No such Course exists!', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
+  },
+
+  getForCourse(courseId) {
+    return this.find({ course: new mongoose.Types.ObjectId(courseId) })
+    .exec();
   },
 
   /**

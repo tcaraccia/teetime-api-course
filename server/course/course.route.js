@@ -84,7 +84,7 @@ router.route('/')
  *
  */
   .post(validate(paramValidation.createCourse), courseCtrl.create);
-
+/** List courses when API with date route param is hit */
 router.route('/:courseId')
  /**
  * @api {get} /api/v1/courses/:id Retrieve one course
@@ -174,8 +174,8 @@ router.route('/:courseId')
  *     }
  */
   .delete(courseCtrl.remove);
-
 /** Load course when API with courseId route parameter is hit */
 router.param('courseId', courseCtrl.load);
+router.param('date', courseCtrl.list);
 
 module.exports = router;
