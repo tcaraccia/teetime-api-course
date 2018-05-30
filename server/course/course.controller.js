@@ -47,18 +47,10 @@ function update(req, res, next) {
 }
 
 function list(req, res, next) {
-  const date = req.query.date;
   const { limit = 50, skip = 0 } = req.query;
-
-  if (date) {
-    Course.listFromDate(date)
+  Course.list({ limit, skip })
     .then(courses => res.json(courses))
     .catch(e => next(e));
-  } else {
-    Course.list({ limit, skip })
-    .then(courses => res.json(courses))
-    .catch(e => next(e));
-  }
 }
 
 function remove(req, res, next) {

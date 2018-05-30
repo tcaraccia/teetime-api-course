@@ -43,6 +43,16 @@ TeetimeSchema.statics = {
     return this.find({ course: new mongoose.Types.ObjectId(courseId) })
     .exec();
   },
+    /**
+   * Gets Teetime for Course on specified date
+   * @param {string} id - Id of the course to find
+   * @param {string} date - Date of the teetime.
+   * @returns {Promise<Teetime[]>}
+   */
+  getForCourseAndDate(courseId, _date) {
+    return this.findOne({ course: new mongoose.Types.ObjectId(courseId), date: _date })
+    .exec();
+  },
 
   /**
    * List Teetimes in descending order of 'createdAt' timestamp.

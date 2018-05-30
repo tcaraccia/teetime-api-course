@@ -97,17 +97,6 @@ CourseSchema.statics = {
       .skip(+skip)
       .limit(+limit)
       .exec();
-  },
-
-  listFromDate(date) {
-    const from = new Date(date);
-    from.setHours(0, 0, 0, 0);
-    return this.find()
-    .populate({
-      path: 'teetimes',
-      match: { date: { $gte: from } }
-    })
-    .exec();
   }
 };
 
