@@ -21,6 +21,21 @@ const CourseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  status: {
+    type: String
+  },
+  times: {
+    open: {
+      type: Date
+    },
+    close: {
+      type: Date
+    }
+  },
+  slots: {
+    type: Number,
+    default: 4
+  },
   location: {
     lat: String,
     long: String,

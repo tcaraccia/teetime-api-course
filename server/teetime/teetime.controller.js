@@ -43,8 +43,8 @@ function update(req, res, next) {
 }
 
 function list(req, res, next) {
-  const { limit = 50, skip = 0 } = req.query;
-  Teetime.list({ limit, skip })
+  const { start, end } = req.query;
+  Teetime.list({ date: { $gte: start, $lte: end } })
     .then(teetimes => res.json(teetimes))
     .catch(e => next(e));
 }

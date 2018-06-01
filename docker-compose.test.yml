@@ -5,7 +5,7 @@ services:
     build:
       context: .
 
-    image: teetime-api-course:latest
+    image: teetime-api:latest
 
     volumes:
       # Mounts the project directory on the host to /app inside the container,
@@ -23,8 +23,8 @@ services:
 
     # Overwrite any env var defined in .env file (if required)
     environment:
-      - MONGO_HOST=mongodb://mongo/teetime-api-course
-      - DEBUG=teetime-api-course:*
+      - MONGO_HOST=mongodb://mongo/teetime-api
+      - DEBUG=teetime-api:*
 
     # Link to containers in another service.
     # Links also express dependency between services in the same way as depends_on,

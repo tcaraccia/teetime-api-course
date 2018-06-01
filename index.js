@@ -5,7 +5,7 @@ const util = require('util');
 const config = require('./config/config');
 const app = require('./config/express');
 
-const debug = require('debug')('teetime-api-course:index');
+const debug = require('debug')('teetime-api:index');
 
 // make bluebird default Promise
 Promise = require('bluebird'); // eslint-disable-line no-global-assign

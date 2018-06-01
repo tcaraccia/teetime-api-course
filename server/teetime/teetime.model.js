@@ -44,13 +44,16 @@ TeetimeSchema.statics = {
     .exec();
   },
     /**
-   * Gets Teetime for Course on specified date
+   * Gets Teetime for Course between date range
    * @param {string} id - Id of the course to find
-   * @param {string} date - Date of the teetime.
+   * @param {string} startDate - Start date of the teetime.
+   * @param {string} endDate - End date of the teetime.
    * @returns {Promise<Teetime[]>}
    */
-  getForCourseAndDate(courseId, _date) {
-    return this.findOne({ course: new mongoose.Types.ObjectId(courseId), date: _date })
+  getBetweenDates(startDate, endDate) {
+    return this.find({
+      date: { $gte: startDate, $lte: endDate }
+    })
     .exec();
   },
 
