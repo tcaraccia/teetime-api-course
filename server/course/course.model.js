@@ -22,7 +22,14 @@ const CourseSchema = new mongoose.Schema({
     required: true
   },
   status: {
-    type: String
+    value: {
+      type: String,
+      default: 'HIDDEN'
+    },
+    display: {
+      type: String,
+      default: ''
+    }
   },
   times: {
     open: {
@@ -33,8 +40,14 @@ const CourseSchema = new mongoose.Schema({
     }
   },
   slots: {
-    type: Number,
-    default: 4
+    quantity: {
+      type: Number,
+      default: 4
+    },
+    frequency: {
+      type: Number,
+      default: 30 // minutes between each teatime
+    }
   },
   location: {
     lat: String,
@@ -58,6 +71,17 @@ const CourseSchema = new mongoose.Schema({
   available: {
     type: Boolean,
     default: true
+  },
+  fee: {
+    low: {
+      type: Number
+    },
+    regular: {
+      type: Number
+    },
+    high: {
+      type: Number
+    }
   }
 }, {
   timestamps: {

@@ -20,10 +20,10 @@ function get(req, res) {
 
 function create(req, res, next) {
   const teetime = new Teetime({
-    course: req.body.course,
+    course: req.body.courseId || req.body.course._id,
     date: req.body.date,
-    times: req.body.times,
-    slots: req.body.slot
+    times: req.body.times || Teetime.createDefaultTimes(req.body.course, req.body.date),
+    slots: req.body.slots || req.body.course.slots.quantity
   });
   teetime.save()
     .then(savedTeetime => res.json(savedTeetime))
